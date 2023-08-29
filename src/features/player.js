@@ -18,9 +18,6 @@ export const playerSlice = createSlice({
                 state.position += overload
             }
         },
-        changePlayerIcon: (state, action) => {
-            state.icon = action.payload
-        },
         buyStreet: (state, action) => {
                 state.money -= action.payload.price
                 state.bought = [...state.bought, action.payload]
@@ -29,10 +26,16 @@ export const playerSlice = createSlice({
         sellStreet: (state, action) => {
             state.bought = state.bought.filter(item => item.index !== action.payload.index)
             state.money += action.payload.price
+        },
+        changeIconAndResetGame: (state, action) => {
+            state.position = 1
+            state.bought = []
+            state.icon = action.payload
+            state.money = 200
         }
     }
 })
 
-export const {movePlayer, changePlayerIcon, buyStreet, sellStreet} = playerSlice.actions
+export const {movePlayer, buyStreet, sellStreet, changeIconAndResetGame } = playerSlice.actions
 
 export default playerSlice.reducer;

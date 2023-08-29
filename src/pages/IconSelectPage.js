@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { useDispatch } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css'
-import { changePlayerIcon } from '../features/player';
+import { changeIconAndResetGame } from '../features/player';
 import { useNavigate } from 'react-router-dom';
 
 const IconSelectPage = () => {
@@ -19,7 +19,7 @@ const IconSelectPage = () => {
     return (
         <div className='d-flex flex-column p-3 gap-3'>
             <div className='d-flex gap-3 justify-content-center'>
-                {icons.map(item => <div style={{backgroundColor: selectedIcon === item.icon ? 'green' : '', borderRadius: '10px'}}>
+                {icons.map(item => <div key={item.icon} style={{backgroundColor: selectedIcon === item.icon ? 'green' : '', borderRadius: '10px'}}>
                     <img className='icon' src={item.icon} alt="" onClick={() => {
                         setSelectedIcon(item.icon)
                     }}/>
@@ -28,7 +28,7 @@ const IconSelectPage = () => {
             <div className='d-flex justify-content-center'>
                 <div className='startButton' onClick={() => {
                     nav('/mainPage')
-                    dispatch(changePlayerIcon(selectedIcon))
+                    dispatch(changeIconAndResetGame(selectedIcon))
                 }}>Start game</div>
             </div>
         </div>
