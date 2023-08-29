@@ -60,7 +60,7 @@ const MainPage = () => {
            return player.bought.find(boughtItem => boughtItem.index === item.index)
         }
 
-        function Buy (item) {
+        function buy (item) {
             if (player.money >= item.price){
                 dispatch(buyStreet(item))
                 setError('')
@@ -102,7 +102,7 @@ const MainPage = () => {
                                         {/* IF STREET ISNT BOUGHT, AND CELL ISNT START CELL, SHOW 'BUY' BUTTON */}
                                         {!isStreetBought(item) && item.name !== 'Start' &&
                                             <button 
-                                                onClick={() => Buy(item)} style={{padding: '5px 20px'}} className='btn btn-secondary'>
+                                                onClick={() => buy(item)} style={{padding: '5px 20px'}} className='btn btn-secondary'>
                                                 Buy
                                             </button>}
                                     </div>}
