@@ -101,8 +101,8 @@ const MainPage = () => {
                                         </div>
                                         {/* IF STREET ISNT BOUGHT, AND CELL ISNT START CELL, SHOW 'BUY' BUTTON */}
                                         {!isStreetBought(item) && item.name !== 'Start' &&
-                                            <button 
-                                                onClick={() => buy(item)} style={{padding: '5px 20px'}} className='btn btn-secondary'>
+                                            <button
+                                                onClick={() => buy(item)} style={{padding: '5px 20px'}} className='btn btn-secondary mt-1'>
                                                 Buy
                                             </button>}
                                     </div>}

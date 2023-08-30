@@ -7,11 +7,11 @@ import { useNavigate } from 'react-router-dom';
 
 const IconSelectPage = () => {
     const icons = [
-        {icon: 'https://cdn0.iconfinder.com/data/icons/board-card-games-iconez/64/Monopoly-Ship-256.png'},
-        {icon: 'https://cdn0.iconfinder.com/data/icons/board-card-games-iconez/64/Monopoly-Shoe-256.png'},
-        {icon: 'https://cdn0.iconfinder.com/data/icons/board-card-games-iconez/64/Monopoly-Car-256.png'},
-        {icon: 'https://cdn0.iconfinder.com/data/icons/board-card-games-iconez/64/Monopoly-Wheelbarrow-512.png'},
-        {icon: 'https://cdn0.iconfinder.com/data/icons/board-card-games-iconez/64/Monopoly-Cannon-512.png'}
+        'https://cdn0.iconfinder.com/data/icons/board-card-games-iconez/64/Monopoly-Ship-256.png',
+        'https://cdn0.iconfinder.com/data/icons/board-card-games-iconez/64/Monopoly-Shoe-256.png',
+        'https://cdn0.iconfinder.com/data/icons/board-card-games-iconez/64/Monopoly-Car-256.png',
+        'https://cdn0.iconfinder.com/data/icons/board-card-games-iconez/64/Monopoly-Wheelbarrow-512.png',
+        'https://cdn0.iconfinder.com/data/icons/board-card-games-iconez/64/Monopoly-Cannon-512.png'
     ]
     const [selectedIcon, setSelectedIcon] = useState('')
     const nav = useNavigate()
@@ -19,9 +19,9 @@ const IconSelectPage = () => {
     return (
         <div className='d-flex flex-column p-3 gap-3'>
             <div className='d-flex gap-3 justify-content-center'>
-                {icons.map(item => <div key={item.icon} style={{backgroundColor: selectedIcon === item.icon ? 'green' : '', borderRadius: '10px'}}>
-                    <img className='icon' src={item.icon} alt="" onClick={() => {
-                        setSelectedIcon(item.icon)
+                {icons.map(item => <div key={item} style={{backgroundColor: selectedIcon === item ? 'green' : '', borderRadius: '10px'}}>
+                    <img className='icon' src={item} alt="" onClick={() => {
+                        setSelectedIcon(item)
                     }}/>
                 </div>)}
             </div>
